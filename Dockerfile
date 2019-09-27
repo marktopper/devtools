@@ -69,3 +69,7 @@ RUN phpcs --version
 # Install Vapor CLI
 RUN composer global require laravel/vapor-cli
 RUN vapor --version
+
+# Install Node
+RUN apt-get install nodejs --yes --quiet
+RUN node -v
