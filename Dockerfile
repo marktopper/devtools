@@ -4,9 +4,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /var/app
 
-RUN apt-get update --yes --quiet
-RUN apt-get upgrade --yes --quiet
-RUN apt install --yes --quiet \
+RUN apt-get update -yqq
+RUN apt-get upgrade -yqq
+RUN apt install -yqq \
 	curl \
 	software-properties-common \
 	git \
@@ -15,7 +15,7 @@ RUN apt install --yes --quiet \
 
 # Install PHP v7.3
 RUN add-apt-repository ppa:ondrej/php --yes
-RUN apt-get install --yes --quiet \
+RUN apt-get install -yqq \
 	php7.3 \
 	php7.3-bcmath \
 	php7.3-bz2 \
@@ -71,9 +71,9 @@ RUN composer global require laravel/vapor-cli
 RUN vapor --version
 
 # Install Node
-RUN apt-get install nodejs --yes --quiet
+RUN apt-get install nodejs -yqq
 RUN node -v
 
 # Install NPM
-RUN apt-get install npm --yes --quiet
+RUN apt-get install npm -yqq
 RUN npm -v
