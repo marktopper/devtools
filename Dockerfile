@@ -73,3 +73,7 @@ RUN vapor --version
 # Install Node
 RUN apt-get install nodejs --yes --quiet
 RUN node -v
+
+# Install NPM
+RUN apt-get install npm --yes --quiet
+RUN npm -v
