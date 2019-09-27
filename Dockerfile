@@ -77,3 +77,8 @@ RUN node -v
 # Install NPM
 RUN apt-get install npm -yqq
 RUN npm -v
+
+# Install Yarn
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN source ~/.bashrc
+RUN yarn -v
