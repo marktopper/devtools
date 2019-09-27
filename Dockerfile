@@ -11,7 +11,14 @@ RUN apt install -yqq \
 	software-properties-common \
 	git \
 	unzip \
-	docker-compose
+	docker-compose \
+	xvfb \
+	libgtk-3-dev \
+	libnotify-dev \
+	libgconf-2-4 \
+	libnss3 \
+	libxss1 \
+	libasound2
 
 # Install PHP v7.3
 RUN add-apt-repository ppa:ondrej/php --yes
