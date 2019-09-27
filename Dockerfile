@@ -80,5 +80,5 @@ RUN npm -v
 
 # Install Yarn
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
-RUN source ~/.bashrc
+ENV PATH="$PATH:/root/.yarn/bin"
 RUN yarn -v
