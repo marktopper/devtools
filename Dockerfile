@@ -90,3 +90,6 @@ RUN npm -v
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 ENV PATH="$PATH:/root/.yarn/bin"
 RUN yarn -v
+
+# Install Nuxt CLI
+RUN yarn global add nuxt @nuxt/typescript-runtime
