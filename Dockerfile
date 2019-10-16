@@ -20,6 +20,10 @@ RUN apt install -yqq \
 	libxss1 \
 	libasound2
 
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
+
 # Install PHP v7.3
 RUN add-apt-repository ppa:ondrej/php --yes
 RUN apt-get install -yqq \
@@ -77,12 +81,9 @@ RUN phpcs --version
 RUN composer global require laravel/vapor-cli
 RUN vapor --version
 
-# Install Node
+# Install Node (Includes NPM)
 RUN apt-get install nodejs -yqq
 RUN node -v
-
-# Install NPM
-RUN apt-get install npm -yqq
 RUN npm -v
 
 # Install Yarn
